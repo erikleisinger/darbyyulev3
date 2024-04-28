@@ -1,0 +1,15 @@
+
+<template>
+    <article class="grid grid-cols-[33%,_66%] min-h-[100px] md:min-h-[300px] overflow-hidden md:hover:bg-black/5 transition-all cursor-pointer gap-2 md:gap-0">
+        <NuxtImg :src="item.img_main" class="h-full md:aspect-[1/2] object-cover" preload />
+        <div class="md:p-6">
+            <h2 class="text-gold md:normal-case font-medium md:font-bold">{{ item.name }}</h2>
+            <p class="text-p3">{{ item.description }}</p>
+        </div>
+    </article>
+    </template>
+<script setup>
+const props = defineProps({
+    item: Object
+})
+</script>

@@ -1,0 +1,102 @@
+html {
+    font-size: 14.8px;
+    font-family: "Darker Grotesque", sans-serif;
+    background-color: var(--bg)
+
+  }
+  
+  h1 {
+    font-size: 38px;
+    line-height: 50px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "azo-sans-web", sans-serif;
+    letter-spacing: 0.1em;
+  }
+
+  @mixin text-h2 {
+    font-size: 23.75px;
+    line-height: 26px;
+  }
+  
+  h2 {
+    @include text-h2;
+    font-family: "azo-sans-web", sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .text-h2 {
+    @include text-h2;
+  }
+
+  h3 {
+    font-size: 23.75px;
+    line-height: 32px;
+  }
+  p {
+    font-size: 14.84px;
+    line-height: 19.3px;
+  }
+  .text-p2 {
+    font-size: 12px;
+    line-height: 12.96px;
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      font-size: 18.75px;
+      line-height: 24px;
+    }
+    h1 {
+      font-size: 30px;
+      line-height: 39px;
+    }
+    h2 {
+      font-size: 11.72px;
+      line-height: 15.56px;
+    }
+    h3 {
+      font-size: 18.75px;
+      line-height: 25px;
+    }
+    p {
+      font-size: 18.8px;
+      line-height: 25px;
+    }
+    .text-p2 {
+      font-size: 9.56px;
+      line-height: 12.96px;
+    }
+    .text-p3 {
+      font-size: 11.72px;
+      line-height: 15.89px; 
+    }
+  
+  }
+
+  @mixin pretty-scrollbar {
+
+    -ms-scroll-chaining: none;
+    overscroll-behavior: none;
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 50px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 50px;
+      background-clip: content-box;
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid transparent;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  
+}
+
+.pretty-scrollbar {
+  @include pretty-scrollbar
+}
