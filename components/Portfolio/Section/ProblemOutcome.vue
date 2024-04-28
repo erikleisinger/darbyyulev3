@@ -17,8 +17,9 @@
 
   </section>
 </template>
-<script setup>
-const props = defineProps({
-  content: Object,
-});
+<script setup lang="ts">
+import type { ProblemOutcomeContent } from '@/types/ProblemOutcome';
+const props = defineProps<{
+  content: ProblemOutcomeContent,
+}>();
 </script>
