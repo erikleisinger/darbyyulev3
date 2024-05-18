@@ -4,6 +4,9 @@
       
 
   }" >
+  <div class="absolute top-0 right-0 p-4">
+    <div class="i-carbon-close-large text-white text-[3rem] cursor-pointer" @click="navigateTo('/work')"/>
+  </div>
       <div
         :style="{
           backgroundImage: `url(${item.header_bg})`,

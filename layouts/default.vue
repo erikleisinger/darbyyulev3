@@ -33,7 +33,7 @@
     </main>
 
     <!-- MOBILE nav -->
-    <Nav class="md:hidden fixed  z-50" :style="{bottom: `${navHeight}px`}" v-if="showNav" ref="nav" />
+    <Nav class="md:hidden fixed  z-50 bottom-0"  v-if="showNav" ref="nav" />
 </template>
 
 <script setup>
