@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="bg-mustard flex gap-2 w-full justify-around  py-1 [&>*]:flex [&>*]:flex-col [&>*]:items-center text-black"
+    class="bg-mustard flex gap-2 w-full justify-around  py-1 [&>*]:flex [&>*]:flex-col [&>*]:items-center text-black py-[6px]"
   >
  
     <NavButton :dark="currentRoute === '/'" text="Home" @click="navigateTo('/')" icon="i-carbon-home"/>

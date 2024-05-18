@@ -1,5 +1,5 @@
 <template>
-    <main class="fixed inset-0  flex justify-center items-center">
+    <div class="fixed inset-0  flex justify-center items-center">
 
       <div class="w-[70vw] max-h-[75vh] md:w-auto md:h-[50vh] aspect-[1.2/2] md:aspect-[1.2/1]    relative ">
         <NuxtImg
@@ -23,5 +23,5 @@
         </div>
       </div>
   
-    </main>
+    </div>
 </template>

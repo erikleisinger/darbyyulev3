@@ -1,0 +1,24 @@
+$xs-reference-width: 393;
+$desktop-reference-width:2880;
+$desktop-reference-height: 1800;
+$xs-reference-height: 852;
+@function calcDimension($n, $small: false, $width: true) {
+    @if $small {
+        @if $width {
+            @return calc($n / $xs-reference-width * 100 * 1vw);
+        }
+        @else {
+            @return calc($n / $xs-reference-height * 100 * 1vh);
+        }
+      
+    }
+    @else {
+        @if $width {
+            @return calc($n / $desktop-reference-width * 100 * 1vw);
+        }
+        @else {
+            @return calc($n / $desktop-reference-height * 100 * 1vh);
+        }
+       
+    }
+}

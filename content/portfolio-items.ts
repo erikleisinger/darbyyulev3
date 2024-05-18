@@ -3,12 +3,17 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
   {
     id: "pebble",
     name: "Design System & Branding for Sports Web App",
-    description: `Pebble is a curling app made for tracking stats and games on a mobile device. My duties included Design Strategy, Information Architecture, Research, and Logo Design.`,
+    description: `Pebble is a curling app made for tracking stats and games.`,
     img_main: "/images/item_main_pebble.png",
+    header_bg: '/images/pebble_header_bg.png',
+    header_img: '/images/pebble_header.png',
+    header_img_sm: '/images/pebble_header_mobile.png',
+
     sections: [
       {
         id: "1",
         componentName: "ProblemOutcome",
+      
         content: {
           problem: `How might we make it easy for a user to navigate, understand, and interact with the app in a meaningful way?`,
           outcome: `Research, LoFi Wireframes, Design System, HiFi Wireframes, Branding`,
@@ -16,7 +21,17 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       },
       {
         id: "2",
+        componentName: "Custom",
+        grid: 1,
+        content: {
+          name: "Styles",
+          imgs: ["/images/pebble_styles_1.png", "/images/pebble_styles_2.png"],
+        },
+      },
+      {
+        id: "3",
         componentName: "DesignProcess",
+        grid: 1,
         content: [
           {
             name: "Research",
@@ -36,17 +51,11 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
           },
         ],
       },
-      {
-        id: "3",
-        componentName: "Custom",
-        content: {
-          name: "Styles",
-          imgs: ["/images/pebble_styles_1.png", "/images/pebble_styles_2.png"],
-        },
-      },
+    
       {
         id: "4",
         componentName: "Custom",
+        grid: 2,
         content: {
           name: "Final",
           imgs: ["/images/pebble_final.png"],
@@ -59,6 +68,9 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
     name: "UI & Content Re-design of commerce App",
     description: `Re-design of Arc’Teryx’s Explore section on their mobile app. Includes a new feed, favourites, and message system.`,
     img_main: "/images/item_main_arc.png",
+    header_img: '/images/arc_header.png',
+    header_img_sm: '/images/arc_header_mobile.png',
+    header_bg: '/images/arc_bg.png',
     sections: [
       {
         id: "1",
@@ -69,55 +81,67 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
         },
       },
       {
-        id: "2",
-        componentName: "DesignProcess",
-        content: [
+        id: '2',
+        grid: 1,
+        componentName: 'Custom',
+        sections: [
           {
-            name: "Research",
-            content: `I created a user journey on FigJam and came out with three major findings.
-                        <ul>
-                    
-                        <li>
-                       • It is unclear what kinds of content are available on the ‘My Feed Section’. 
-                       </li>
-                   
-                       <li>
-                       • Users are being redirected to the shop instead of being encouraged to engage with the products and lifestyle that Arc’teryx is selling.
-                       </li>
-                       </ul>
-                       `,
-            isHtml: true,
+            id: "designprocess",
+            componentName: "DesignProcess",
+            grid: 1,
+            content: [
+              {
+                name: "Research",
+                content: `I created a user journey on FigJam and came out with three major findings.
+                            <ul>
+                        
+                            <li>
+                           • It is unclear what kinds of content are available on the ‘My Feed Section’. 
+                           </li>
+                       
+                           <li>
+                           • Users are being redirected to the shop instead of being encouraged to engage with the products and lifestyle that Arc’teryx is selling.
+                           </li>
+                           </ul>
+                           `,
+                isHtml: true,
+              },
+              {
+                name: "Ideation",
+                content: `I kept with the ‘Gallery’ theme but added titles and icons to every button. I also included avatars listing all of the gear used in the piece of contentThis allows more targeted marketing for specific gear, announcements, and features.`,
+              },
+              {
+                name: "Content Strategy",
+                content: `I took a page from Red Bull’s strategy and redesigned the content pages to be able to sell the Arc’Teryx lifestyle. It gently guides the user on a journey that starts with the Arc’teryx brand and ends with them acquiring their product.`,
+              },
+              {
+                name: "HiFi Wireframe",
+                content: `A full redesign of the ‘Explore’ Tab on the Arc’teryx mobile app that not only showcases Arc’teryx’s amazing products, but sells the Arc’teryx way of life. It has been stylized and rescaled to fit heuristic and accessibility standards.`,
+              },
+            ],
           },
           {
-            name: "Ideation",
-            content: `I kept with the ‘Gallery’ theme but added titles and icons to every button. I also included avatars listing all of the gear used in the piece of contentThis allows more targeted marketing for specific gear, announcements, and features.`,
+            id: "beforeafter",
+            componentName: "Custom",
+            grid: 1,  
+            content: {
+              name: "Before & After",
+              imgs: ["/images/arc_beforeafter.png"],
+            },
           },
-          {
-            name: "Content Strategy",
-            content: `I took a page from Red Bull’s strategy and redesigned the content pages to be able to sell the Arc’Teryx lifestyle. It gently guides the user on a journey that starts with the Arc’teryx brand and ends with them acquiring their product.`,
-          },
-          {
-            name: "HiFi Wireframe",
-            content: `A full redesign of the ‘Explore’ Tab on the Arc’teryx mobile app that not only showcases Arc’teryx’s amazing products, but sells the Arc’teryx way of life. It has been stylized and rescaled to fit heuristic and accessibility standards.`,
-          },
-        ],
+        ]
       },
+      
       {
         id: "3",
         componentName: "Custom",
+        grid: 1,
         content: {
           name: "Site Map & Strategy",
           imgs: ["/images/arc_sitemap.png"],
         },
       },
-      {
-        id: "3",
-        componentName: "Custom",
-        content: {
-          name: "Before & After",
-          imgs: ["/images/arc_beforeafter.png"],
-        },
-      },
+     
       {
         id: "3",
         componentName: "Custom",
@@ -133,6 +157,9 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
     name: "Blog & Video Design",
     description: `Although I am trained in Content Design through the University of Alberta, I have been creating content for mot of my creative career. I have done everything from songwriting to social media strategy to producing television programming. Below is a look into my training at the U of A.`,
     img_main: "/images/item_main_content.png",
+    header_bg: '/images/content_bg.png',
+    header_img: '/images/content_header.png',
+    header_img_sm: '/images/content_header_mobile.png',
     sections: [
       {
         id: "1",
@@ -145,6 +172,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "2",
         componentName: "DesignProcess",
+        grid: 1,
         content: [
           {
             name: "Research",
@@ -167,6 +195,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "3",
         componentName: "Custom",
+        grid: 1,
         content: {
           name: "Video Design",
           video: {
@@ -178,6 +207,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "4",
         componentName: "Custom",
+        grid: 2,
         content: {
           name: "Blog Design",
           link: {
@@ -192,6 +222,9 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
     id: "ccc",
     name: "UI & UX Redesign of NGO-Website",
     description: `The Community Counselling Centre is a Non-Profit Organization that offers ‘low-barrier’ counselling services to anyone who needs it.`,
+    header_bg: '/images/ccc_bg.png',
+    header_img: '/images/ccc_header.png',
+    header_img_sm: '/images/ccc_header_mobile.png',
     img_main: "/images/item_main_ccc.png",
     sections: [
       {
@@ -205,6 +238,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "2",
         componentName: "DesignProcess",
+        grid: 1,
         content: [
           {
             name: "Research",
@@ -227,6 +261,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "3",
         componentName: "Custom",
+        grid: 1,
         content: {
           name: "UX Writing Example",
           imgs: ["/images/ccc_ux.png"],
@@ -235,6 +270,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "4",
         componentName: "Custom",
+        grid: 2,
         content: {
           name: "Final",
           imgs: ["/images/ccc_final.png"],
@@ -247,6 +283,9 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
     name: "Graphic Design Examples",
     description: `This is a collection of recent graphics and logos that I have created for various projects. In an effort to expand my skillset, I offer graphic design services to companies and individual entrepreneurs.`,
     img_main: "/images/item_main_graphics.png",
+    header_bg: '/images/graphics_bg.png',
+    header_img: '/images/graphics_header.png',
+    header_img_sm: '/images/graphics_header_mobile.png',
     sections: [
       {
         id: "1",
@@ -259,6 +298,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "2",
         componentName: "DesignProcess",
+        grid: 1,
         content: [
           {
             name: "Customer Input",
@@ -281,6 +321,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "3",
         componentName: "Custom",
+        grid: 1,
         content: {
           name: "Pebble",
           description: `Pebble has its own section of my portfolio but I felt it was important to highlight the logo.`,
@@ -290,6 +331,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "4",
         componentName: "Custom",
+        grid: 1,
         content: {
           name: `Mundo's New Leaf`,
           description: `Mundo’s New Leaf Yard and Grounds Services is a new landscaping company in Courtenay, BC.`,
@@ -299,6 +341,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "5",
         componentName: "Custom",
+        grid: 1,
         content: {
           name: `The Statistics Cover`,
           description: `The Statistics are a professionally touring band that approached me about making a cover for their new single. `,
@@ -308,6 +351,7 @@ export const PORTFOLIO_ITEMS: PortfolioItems = [
       {
         id: "6",
         componentName: "Custom",
+        grid: 1,
         content: {
           name: `Beachcombers  Coffee`,
           description: `Beachcombers Coffee is a coffee roasters and cafe in Gibsons, BC.`,

@@ -7,7 +7,20 @@ export type PortfolioItemComponentName = 'ProblemOutcome' | 'DesignProcess' | 'C
 export interface PortfolioItemSection {
     id: string;
     componentName: PortfolioItemComponentName;
-    content: CustomSectionContent | DesignProcessContent | ProblemOutcomeContent;
+    grid?: number;
+    content?: CustomSectionContent | DesignProcessContent | ProblemOutcomeContent;
+    sections?: PortfolioItemSection[]
+}
+
+export interface HeaderImage {
+    src: string;
+    x: number | string;
+    y: number | string;
+}
+
+export interface HeaderImageInfo {
+    bg: string;
+    header_imgs: HeaderImage[]
 }
 
 export interface PortfolioItem {
@@ -15,6 +28,9 @@ export interface PortfolioItem {
     name: string;
     description: string;
     img_main: string;
+    header_bg: string;
+    header_img?: string;
+    header_img_sm?: string;
     sections: PortfolioItemSection[];
 }
 

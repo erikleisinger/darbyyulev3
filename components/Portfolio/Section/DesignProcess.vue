@@ -1,7 +1,9 @@
 <template>
-  <section class="px-1 pb-1 ">
-    <h1 class="mb-4 md:mb-12">Design process</h1>
-    <div class="grid grid-cols-2 gap-6 md:gap-y-20">
+  <section class="px-1 pb-1 col-span-1 design-process__sectio">
+    <header>
+    <h1 >Design process</h1>
+  </header>
+    <div class="grid grid-cols-2 md:grid-cols-1 gap-6 md:gap-8">
       <section v-for="section in content" :key="section.name">
         <header class="flex gap-2 md:mb-4">
           <div class="w-[20px] h-[20px]" :class="icon(section.name)" />
@@ -21,6 +23,14 @@
     </div>
   </section>
 </template>
+<style lang="scss" >
+.design-process_section {
+  ul {
+    padding-left: 1rem;
+  }
+}
+
+</style>
 <script setup lang="ts">
 import type {
   DesignProcessContent,

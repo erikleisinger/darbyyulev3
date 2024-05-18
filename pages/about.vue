@@ -1,30 +1,52 @@
 <template>
-  <Container>
-  <div class="grid grid-rows-[60%,_40%]  md:h-auto md:block h-full">
-    <header class=" h-full md:h-auto m-auto md:mt-[35vh] md:m-0 px-4 flex flex-col justify-center md:justify-start  md:h-[33%]  text-white  md:max-w-[800px]  ">
+  <Container v-if="!isSm">
+  <div class=" h-[inherit] " >
+    <header class="fixed m-auto w-fit h-fit inset-0" :style="{left: '33vw', right: '20vw'}">
       <h1
        
       >
-        Hi! mynameis Darby & I provide:
+        Hi! <span class="text-mustard">mynameis Darby</span> & I provide:
       </h1>
-      <h3 class="font-normal md:mt-3">
+      <h2 class=" md:mt-3 ">
         User Interface Design | Content Design & Strategy | User Experience
         Design | Data Centred Branding | Graphics | Creativity |
-      </h3>
+      </h2>
     </header>
   </div>
-  <NuxtImg
-    src="/images/about_mobile.png"
-    preload
-    class="fixed bottom-0 right-0 max-h-[45%] z-0"
-    v-if="isSm"
-  />
+
   <NuxtImg
     src="/images/about_desktop.png"
     preload
-    class="fixed bottom-0 right-0 max-h-[50%] z-0"
-    v-else
+    class="fixed bottom-0 left-0 max-h-[60vh] max-w-[33vw] z-0"
+
   />
+  <NuxtImg
+    src="/images/about_desktop_2.png"
+    preload
+    class="fixed top-0 right-0 max-h-[50vh] max-w-[33vw] z-0"
+
+  />
+</Container>
+<Container v-else class="flex flex-col justify-between">
+  <header class="flex flex-col justify-end grow mb-[5vh] px-4">
+      <h1
+       
+      >
+        Hi! <span class="text-mustard">mynameis Darby</span> & I provide:
+      </h1>
+      <h2 class=" md:mt-3 ">
+        User Interface Design | Content Design & Strategy | User Experience
+        Design | Data Centred Branding | Graphics | Creativity |
+      </h2>
+    </header>
+  <div class="flex justify-end">
+  <NuxtImg
+    src="/images/about_mobile.png"
+    preload
+    class=" max-h-[50vh]  z-0"
+
+  />
+</div>
 </Container>
 </template>
 <script setup>

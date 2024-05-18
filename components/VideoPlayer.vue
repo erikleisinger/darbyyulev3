@@ -1,9 +1,9 @@
 <template>
   <div
-    class="rounded-xl aspect-[1/2] md:aspect-video overflow-hidden w-fit w-full relative m-auto"
+    class="rounded-xl aspect-[1/2]  overflow-hidden w-fit w-full relative m-auto md:max-w-[500px]"
   >
     <div
-      class="absolute inset-0 z-[1] bg-black"
+      class="absolute inset-0 z-[1] bg-black "
       v-if="!playing"
       ref="previewOverlay"
     >
@@ -15,9 +15,9 @@
       </div>
       <NuxtImg
         :src="video.preview"
-        fit="contain"
-        :height="height"
-        :width="width"
+        fit="cover"
+        :height="Math.round(height)"
+        :width="Math.round(width)"
       />
     </div>
     <iframe
