@@ -18,6 +18,7 @@
         fit="cover"
         :height="Math.round(height)"
         :width="Math.round(width)"
+        loading="lazy"
       />
     </div>
     <iframe

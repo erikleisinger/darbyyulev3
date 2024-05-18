@@ -1,3 +1,3 @@
 <template>
-    <NuxtImg src="/images/blogpost.png" preload width="1000"/>
+    <NuxtImg src="/images/blogpost.png" loading="lazy" width="1000"/>
 </template>

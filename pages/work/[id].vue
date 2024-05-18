@@ -25,7 +25,7 @@
             object-fit: contain;
           
           "
-          preload
+        
           ref="headerImg"
           :style="{maxHeight: isSm ? 'inherit' : 'unset'}"
         />
@@ -42,7 +42,7 @@
           "
          
           ref="headerImg"
-          preload
+       
           class="w-full max-w-[1000px]"
         />
       </div>

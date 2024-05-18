@@ -16,13 +16,13 @@
 
   <NuxtImg
     src="/images/about_desktop.png"
-    preload
+   
     class="fixed bottom-0 left-0 max-h-[60vh] max-w-[33vw] z-0"
 
   />
   <NuxtImg
     src="/images/about_desktop_2.png"
-    preload
+
     class="fixed top-0 right-0 max-h-[50vh] max-w-[33vw] z-0"
 
   />
@@ -42,7 +42,7 @@
   <div class="flex justify-end">
   <NuxtImg
     src="/images/about_mobile.png"
-    preload
+ 
     class=" max-h-[50vh]  z-0"
 
   />
