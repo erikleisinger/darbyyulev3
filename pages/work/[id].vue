@@ -13,7 +13,7 @@
         }"
        
       >
-        <NuxtImg
+        <img
           v-if="isSm"
           :src="item.header_img_sm"
           style="
@@ -29,7 +29,7 @@
           ref="headerImg"
           :style="{maxHeight: isSm ? 'inherit' : 'unset'}"
         />
-        <NuxtImg
+        <img
           v-else
           :src="item.header_img"
           style="

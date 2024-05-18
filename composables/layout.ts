@@ -14,7 +14,7 @@ export const useLayout = () => {
         if (!isSm.value) return ["contact", 'work'].includes(route.name as string) 
           return true;
       })
-      const showSidebar = computed(() => route.path !== '/');
+      const showSidebar = computed(() => route.path !== '/' && !["work-id", 'blog'].includes(route.name as string));
 
       return {backgroundColor, logoOrientation, logoColor, isMustard, showNav, showLogo, showSidebar}
 }
