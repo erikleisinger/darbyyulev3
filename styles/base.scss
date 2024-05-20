@@ -39,8 +39,8 @@ html {
     line-height: max(25px, calcDimension(61, false, true));
   }
   p {
-    font-size: 14.84px;
-    line-height: 19.3px;
+    font-size: max(18px, calcDimension(28, false, true));
+    line-height: max(20px, calcDimension(36, false, true));
   }
   .text-p2 {
     font-size: 12px;
@@ -58,7 +58,7 @@ html {
     }
     h2 {
       font-size: min(14px, calcDimension(18.75, true, true));
-      line-height:  calcDimension(25, true, true);
+      line-height:  min(25px, calcDimension(25, true, true));
       text-transform: unset;
     }
     h3 {
@@ -66,16 +66,16 @@ html {
       line-height: calcDimension(23, true, true);
     }
     p {
-      font-size: 17.14px;
-      line-height: 23px;
+      font-size:  max(12px, calcDimension(17, true, true));
+      line-height: max(14px, calcDimension(23, true, true));
     }
     .text-p-sm {
       font-size: 17.14px;
       line-height: 23px;
     }
     .text-p2 {
-      font-size: 9.56px;
-      line-height: 12.96px;
+      font-size: max(10px, calcDimension(10, true, true));
+      line-height:max(12.96px, calcDimension(12.96, true, true));
     }
     .text-p3 {
       font-size: 11.72px;

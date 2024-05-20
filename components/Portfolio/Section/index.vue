@@ -12,6 +12,7 @@
     v-if="section.componentName === 'DesignProcess'"
     role="section"
     :content="section.content"
+    :grid="section.grid"
     class="  [&>header]:mb-8 [&>header]:md:mb-10 "
     v-bind="$attrs"
   />

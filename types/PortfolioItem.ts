@@ -4,12 +4,18 @@ import type { CustomSectionContent } from "@/types/CustomSection";
 
 export type PortfolioItemComponentName = 'ProblemOutcome' | 'DesignProcess' | 'Custom'
 
+export interface PortfolioSectionOrder {
+    mobile: number;
+    desktop: number;
+}
+
 export interface PortfolioItemSection {
     id: string;
     componentName: PortfolioItemComponentName;
     grid?: number;
     content?: CustomSectionContent | DesignProcessContent | ProblemOutcomeContent;
-    sections?: PortfolioItemSection[]
+    sections?: PortfolioItemSection[],
+    order?: PortfolioSectionOrder
 }
 
 export interface HeaderImage {

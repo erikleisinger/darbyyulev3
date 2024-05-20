@@ -3,11 +3,11 @@
     <header>
     <h1 >Design process</h1>
   </header>
-    <div class="grid grid-cols-2 md:grid-cols-1 gap-6 md:gap-8">
+    <div class="grid grid-cols-2  gap-6 md:gap-8" :class="`md:grid-cols-${grid}`">
       <section v-for="section in content" :key="section.name">
-        <header class="flex gap-2 md:mb-4">
+        <header class="flex gap-2 md:mb-4 items-center">
           <div class="w-[20px] h-[20px]" :class="icon(section.name)" />
-          <h2 class="font-medium normal-case leading-[2] md:leading-[1.1]">
+          <h2 class="font-medium normal-case  md:leading-[1.1]">
             {{ section.name }}
           </h2>
         </header>
@@ -36,7 +36,9 @@ import type {
   DesignProcessContent,
   DesignProcessContentItemName,
 } from "@/types/DesignProcess";
+
 const props = defineProps<{
+  grid: number;
   content: DesignProcessContent;
 }>();
 

@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       "Darker Grotesque": {
-        wght: "300..600",
+        wght: "300..900",
       }
     }
   },

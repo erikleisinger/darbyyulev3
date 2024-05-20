@@ -4,8 +4,8 @@
       
 
   }" >
-  <div class="absolute top-0 right-0 p-4">
-    <div class="i-carbon-close-large text-white text-[3rem] cursor-pointer" @click="navigateTo('/work')"/>
+  <div class="absolute top-0 right-0 p-4 z-50">
+    <div class="i-carbon-close-large text-white text-[44px] cursor-pointer " @click="navigateTo('/work')"/>
   </div>
       <div
         :style="{
@@ -52,7 +52,7 @@
 
       <div class="px-4 md:px-16 pt-[10%] md:pt-[5%] pb-4 md:pb-8 h-fit box-border" ref="headerText">
         <h1 class="text-gold">{{ item.name }}</h1>
-        <h3 >{{ item.description }}</h3>
+        <h3 class="font-[600]">{{ item.description }}</h3>
       </div>
     </header>
 
@@ -61,14 +61,15 @@
         :class="{
           [`col-span-2`]: isSm || !section.grid,
           [`col-span-${section.grid}`]: !isSm || !!section.grid,
-          divider: index & (2 !== 0) && section.grid < 2,
+          divider: hasDivider(index, section.order),
         }"
+        :style="{order: section.order ? (isSm ? section.order.mobile : section.order.desktop) : index}"
         v-for="(section, index) in item.sections"
         :key="section.id"
         :section="section"
       />
 
-      <footer class="py-12 md:pt-16 w-full flex justify-center col-span-2">
+      <footer class="py-12 md:pt-16 w-full flex justify-center col-span-2 order-[100]">
         <Button @click="navigateTo('/work', { replace: true })">Return</Button>
       </footer>
     </div>
@@ -108,4 +109,13 @@ const { height: headerTextHeight } = useElementBounding(headerText);
 const headerImg = ref(null);
 
 const { height: headerImgHeight } = useElementBounding(headerImg);
+
+
+const hasDivider = (index, order) => {
+    if (order) {
+      const orderToUse = isSm.value ? order.mobile : order.desktop;
+      return orderToUse % 2 === 0 
+    }
+    return index % 2 === 0;
+}
 </script>
