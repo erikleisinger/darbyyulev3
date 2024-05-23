@@ -22,8 +22,8 @@
           class="z-10 flex flex-col justify-between"
           :class="img.fullWidth ? 'w-full' : 'max-w-[300px] w-[40%]'"
         >
-          <img :src="img.src" class="h-fit" v-if="!img.mobileSrc || !isSm" />
-          <img v-else :src="img.mobileSrc" class="h-fit" />
+          <NuxtImg :src="img.src" class="h-fit" v-if="!img.mobileSrc || !isSm" />
+          <NuxtImg v-else :src="img.mobileSrc" class="h-fit" />
           <h3
             class="font-bold text-gold text-center max-h-[1em] text-center px-6"
           >
