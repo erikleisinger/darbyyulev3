@@ -3,9 +3,9 @@
   <NuxtLayout >
     <transition>
     <AppLoading v-if="loading"/>
- <div v-else>
-  <NuxtPage />
-</div>
+
+  <NuxtPage v-else />
+
 </transition>
 </NuxtLayout>
 </template>
