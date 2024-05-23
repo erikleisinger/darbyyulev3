@@ -3,8 +3,8 @@
 
 
       <h3 class="flex items-center gap-2 font-bold">
-        <div>
-        <div class="i-carbon-help-filled   mt-[0.1em]  text-[1.5em] md:text-[1.1em] mr-2 " />
+        <div class="h-fit  mt-[0.5em] ">
+        <div class="i-carbon-help-filled     text-[1.5em] md:text-[1.1em] mr-2 " />
       </div>
         <span class="leading-[1.2]">
         <span class=" text-mustard" role="h2">Problem:</span>
@@ -15,8 +15,8 @@
 
  
       <h3 class="flex items-center gap-2 mt-5 font-bold">
-        <div>
-        <div class="i-carbon-radio-button-checked   mt-[0.1em] text-[1.5em] md:text-[1.1em] mr-2" />
+        <div class="h-fit  mt-[0.5em] ">
+        <div class="i-carbon-radio-button-checked  text-[1.5em] md:text-[1.1em] mr-2" />
       </div>
         <span class="leading-[1.2]">
         <span class=" text-mustard " role="h2">Outcomes:</span>
