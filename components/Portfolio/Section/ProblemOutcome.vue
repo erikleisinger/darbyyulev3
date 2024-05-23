@@ -3,7 +3,9 @@
 
 
       <h3 class="flex items-center gap-2 font-bold">
+        <div>
         <div class="i-carbon-help-filled   mt-[0.1em]  text-[4.2em] md:text-[1.1em] mr-2 " />
+      </div>
         <span class="leading-[1.2]">
         <span class=" text-mustard" role="h2">Problem:</span>
        {{ content.problem }}
@@ -13,7 +15,9 @@
 
  
       <h3 class="flex items-center gap-2 mt-5 font-bold">
+        <div>
         <div class="i-carbon-radio-button-checked   mt-[0.1em] text-[3em] md:text-[1.1em] mr-2" />
+      </div>
         <span class="leading-[1.2]">
         <span class=" text-mustard " role="h2">Outcomes:</span>
         {{ content.outcome }}</span>
