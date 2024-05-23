@@ -40,6 +40,16 @@ export default {
         ],
       },
       {
+        id: "ccc",
+        componentName: "Custom",
+        grid: 1,
+        content: {
+          name: "The CCC",
+          description: `The CCC is a low-barrier counselling centre in Prince George, BC.`,
+          imgs: ["/images/graphic_ccc.png"],
+        },
+      },
+      {
         id: "3",
         componentName: "Custom",
         grid: 1,
