@@ -1,15 +1,15 @@
 <template>
-    <div class="flex transition-all duration-200 items-center p-8 max-w-fit   relative" :class="{' bg-mustard fullwidth': open }">
+    <div class="flex transition-all duration-200 items-center p-8 max-w-fit   relative" :class="{'fullwidth': open }">
         <transition>
-      <div class="i-carbon-menu " :class="dark ? 'text-white' : 'text-black'" @click="open = true" v-if="!open"/>
-      <div class="i-carbon-close text-white" v-else @click="open = false"/>
+      <div class="i-carbon-menu "  @click="open = true" v-if="!open"/>
+      <div class="i-carbon-close " v-else @click="open = false"/>
     </transition>
     <transition name="slide">
-    <div v-if="open" class="flex gap-16 text-white items-center [&>h2]:font-normal [&>h2]:normal-case [&>h2]:pt-2 pl-16 pr-12 bg-mustard  ">
-        <h2 class="cursor-pointer hover:text-black transition-color" @click="navigate('/')">Home</h2>
-        <h2 class="cursor-pointer hover:text-black transition-color" @click="navigate('/work')">Work</h2>
-        <h2 class="cursor-pointer hover:text-black transition-color" @click="navigate('/about')">Philosophy</h2>
-        <h2 class="cursor-pointer hover:text-black transition-color" @click="navigate('/contact')">Contact</h2>
+    <div v-if="open" class="flex gap-16  items-center  pl-16 pr-12  ">
+        <h4 class="cursor-pointer transform transition-transform hover:scale-110 hover:font-bold" @click="navigate('/')">Home</h4>
+        <h4 class="cursor-pointer  transform transition-transform hover:scale-110 hover:font-bold" @click="navigate('/work')">Work</h4>
+        <h4 class="cursor-pointer  transform transition-transform hover:scale-110 hover:font-bold" @click="navigate('/about')">Philosophy</h4>
+        <h4 class="cursor-pointer  transform  transition-transform hover:scale-110 hover:font-bold" @click="navigate('/contact')">Contact</h4>
     
     </div>
 </transition>
@@ -46,6 +46,9 @@
 .v-leave-active {
     opacity: 0;
     transform: rotate(-90deg)
+}
+.v-leave-from {
+    opacity: 0;
 }
 .slide-enter-active {
   transition: all 0.3s ease-out;

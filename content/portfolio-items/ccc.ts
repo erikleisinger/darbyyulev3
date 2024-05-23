@@ -58,12 +58,30 @@ export default
         },
       },
       {
-        id: "4",
-        componentName: "Custom",
+        id: "5",
+        componentName: "Final",
         grid: 2,
         content: {
-          name: "Final",
-          imgs: ["/images/ccc_final.png"],
+          bg: '/images/ccc_final_bg.png',
+          imgs: [{
+            src: '/images/ccc_final_1.png',
+            text: 'Home'
+          },
+          {
+            src: '/images/ccc_final_2.png',
+            text: 'About',
+
+          },
+          {
+            src: '/images/ccc_final_3.png',
+            text: 'Professional Development'
+          },
+          {
+            src: '/images/ccc_final_4.png',
+            text: 'Help & Resources'
+          },
+   
+        ],
         },
       },
     ],

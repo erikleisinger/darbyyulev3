@@ -35,6 +35,11 @@ html {
   }
 
   h3 {
+    font-size: max(18px, calcDimension(53, false, true));
+    line-height: max(25px, calcDimension(71, false, true));
+  }
+
+  h4 {
     font-size: max(18px, calcDimension(45, false, true));
     line-height: max(25px, calcDimension(61, false, true));
   }

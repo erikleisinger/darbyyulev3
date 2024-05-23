@@ -4,7 +4,7 @@
 
 
     <NuxtImg src="/images/contact_bg.png" class="fixed bottom-0 right-0 max-w-[1000px] m-auto desktop_wave"  />
- <div class="flex items-center gap-4  h-fit w-fit mt-[25vh] ml-[20vw]">
+ <div class="flex items-center gap-4  h-fit w-fit pt-[25vh] pl-[20vw]">
     <NuxtImg src="/images/contact_splash.png" class="desktop-splash"/>
     <div class="z-[1] text-gold">
         <h1 >Contact</h1>

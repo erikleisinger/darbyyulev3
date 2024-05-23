@@ -1,5 +1,5 @@
 <template>
-  <section class="px-1 pb-1 col-span-1 design-process__sectio">
+  <section class="px-1 pb-1 col-span-1 design-process__section">
     <header>
     <h1 >Design process</h1>
   </header>

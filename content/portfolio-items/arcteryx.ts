@@ -79,11 +79,31 @@ export default {
       },
      
       {
-        id: "3",
-        componentName: "Custom",
+        id: "4",
+        componentName: "Final",
         content: {
-          name: "Final",
-          imgs: ["/images/arc_final.png"],
+          bg: '/images/arc_final_bg.png',
+          imgs: [
+            {
+              src:"/images/arc_final_1.png",
+              text: 'My feed'
+            },
+            {
+              src: "/images/arc_final_2.png",
+              text: 'Inbox'
+            },
+            {
+              src:    "/images/arc_final_3.png",
+              text: 'Favourites'
+            },
+            {
+              src:   "/images/arc_final_4.png",
+              text: 'Content'
+            }
+            
+         
+          
+          ],
         },
       },
     ],

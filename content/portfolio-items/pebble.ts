@@ -52,12 +52,33 @@ export default {
       },
     
       {
-        id: "4",
-        componentName: "Custom",
+        id: "5",
+        componentName: "Final",
         grid: 2,
         content: {
-          name: "Final",
-          imgs: ["/images/pebble_final.png"],
+          bg: '/images/pebble_final_bg.png',
+          imgs: [{
+            src: '/images/pebble_final_1.png',
+            text: 'Overview'
+          },
+          {
+            src: '/images/pebble_final_2.png',
+            text: 'Club page',
+
+          },
+          {
+            src: '/images/pebble_final_3.png',
+            text: 'Stats page'
+          },
+          {
+            src: '/images/pebble_final_4.png',
+            text: 'Game page'
+          },
+          {
+            src: '/images/pebble_final_5.png',
+            text: 'Summary'
+          }
+        ],
         },
       },
     ],

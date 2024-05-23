@@ -59,19 +59,24 @@ export default {
           },
         },
       },
+
       {
-        id: "4",
-        componentName: "Custom",
-        grid: 2,
+        id: '5',
+        componentName: 'Final',
+   
         content: {
-          name: "Blog Design",
-          link: {
-            text: 'READ HERE',
-            href: '/blog'
-          },
-            imgs: ["/images/content_blog.png"],
-         
-        },
-      },
+          title: 'Blog design',
+          linkText: 'Read here',
+          linkHref: '/blog',
+          bg: '/images/content_final_bg.png',
+          imgs: [
+            {
+              src: '/images/content_final_desktop.png',
+              mobileSrc: '/images/content_final_mobile.png',
+              fullWidth: true
+            }
+          ]
+        }
+      }
     ],
   } as PortfolioItem

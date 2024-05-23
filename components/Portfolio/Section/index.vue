@@ -23,6 +23,12 @@
     class=" [&>header]:mb-8 [&>header]:md:mb-10 "
     v-bind="$attrs"
   />
+  <PortfolioSectionFinal v-if="section.componentName === 'Final'"
+    role="section"
+    :content="section.content"
+    class=" [&>header]:mb-8 [&>header]:md:mb-10 "
+    v-bind="$attrs"
+  />
 
   <!--  -->
 </template>
