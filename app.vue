@@ -21,20 +21,27 @@
 }
 </style>
 <script setup>
+import preload from '@/utils/preload'
 const setBg = () => {
   document.documentElement.style.setProperty('--bg', '#fefefe');
 }
 
-const {loading} = useLoading();
+const {loading, setLoading} = useLoading();
 
 
 
 
 
-
+const route = useRoute();
 onBeforeMount(() => {
   setBg();
-
+  setLoading(true)
+  preload(route.path, () => {
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
+ 
+  })
 })
 
 
