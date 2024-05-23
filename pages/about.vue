@@ -14,13 +14,13 @@
     </header>
   </div>
 
-  <NuxtImg
+  <img
     src="/images/about_desktop.png"
    
     class="fixed bottom-0 left-0 max-h-[60vh] max-w-[33vw] z-0"
 
   />
-  <NuxtImg
+  <img
     src="/images/about_desktop_2.png"
 
     class="fixed top-0 right-0 max-h-[50vh] max-w-[33vw] z-0"
@@ -40,10 +40,10 @@
       </h2>
     </header>
   <div class="flex justify-end">
-  <NuxtImg
+  <img
     src="/images/about_mobile.png"
  
-    class=" max-h-[50vh]  z-0"
+    class=" max-h-[50vh]  z-0 min-h-[50vh]"
 
   />
 </div>
