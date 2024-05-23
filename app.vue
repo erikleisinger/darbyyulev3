@@ -12,44 +12,97 @@ const setBg = () => {
   document.documentElement.style.setProperty('--bg', '#fefefe');
 }
 
-const imagesToPreload = [
+// const imagesToPreload = [
+//   'about_desktop.png',
+//   'about_desktop_2.png',
+//   'about_mobile.png',
+//   'arc_bg.png',
+//   'arc_header.png',
+//   'arc_header_mobile.png',
+//   'ccc_bg.png',
+//   'ccc_header.png',
+//   'ccc_header_mobile.png',
+//   'contact_bg.png',
+//   'contact_bg_mobile.png',
+//   'contact_splash.png',
+//   'content_bg.png',
+//   'content_blog.png',
+//   'content_video_preview.png',
+//   'graphics_bg.png',
+//   'graphics_header.png',
+//   'graphics_header_mobile.png',
+//   'hero_desktop.png',
+//   'hero_mobile.png',
+//   'item_main_arc.png',
+//   'item_main_ccc.png',
+//   'item_main_content.png',
+//   'item_main_graphics.png',
+//   'item_main_pebble.png',
+//   'pebble_header.png',
+//   'pebble_header_bg.png',
+//   'pebble_header_mobile.png',
+// ]
+
+const preloadImages = {
+  '/': [
+  'hero_desktop.png',
+  'hero_mobile.png',
+  ],
+  '/about': [
   'about_desktop.png',
   'about_desktop_2.png',
   'about_mobile.png',
-  'arc_bg.png',
-  'arc_header.png',
-  'arc_header_mobile.png',
-  'ccc_bg.png',
-  'ccc_header.png',
-  'ccc_header_mobile.png',
+  ],
+  '/contact': [
   'contact_bg.png',
   'contact_bg_mobile.png',
   'contact_splash.png',
-  'content_bg.png',
-  'content_blog.png',
-  'content_video_preview.png',
-  'graphics_bg.png',
-  'graphics_header.png',
-  'graphics_header_bg.png',
-  'graphics_header_mobile.png',
-  'hero_desktop.png',
-  'hero_mobile.png',
+  ],
+  '/work': [
   'item_main_arc.png',
   'item_main_ccc.png',
   'item_main_content.png',
   'item_main_graphics.png',
   'item_main_pebble.png',
+  ],
+  '/work/ccc': [
+  'ccc_bg.png',
+  'ccc_header.png',
+  'ccc_header_mobile.png',
+  ],
+  '/work/pebble': [
   'pebble_header.png',
   'pebble_header_bg.png',
   'pebble_header_mobile.png',
-]
+  ],
+  '/work/graphics': [
+  'graphics_bg.png',
+  'graphics_header.png',
+  'graphics_header_mobile.png',
+  ],
+  '/work/arc': [
+  'arc_bg.png',
+  'arc_header.png',
+  'arc_header_mobile.png',
+  ],
+  '/work/content': [
+  'content_bg.png',
+  'content_blog.png',
+  'content_video_preview.png',
+  ]
+}
 
 
 const loading = ref(true)
+const route = useRoute()
 onBeforeMount(() => {
   setBg();
   const time = window.performance.now();
-  const images = imagesToPreload.map(imageSrc => {
+  const imagesToPreload = preloadImages[route.path] || [];
+
+  console.log('images to preload: ', imagesToPreload)
+
+  const images = preloadImages[route.path].map(imageSrc => {
       return new Promise((resolve, reject) => {
         const img = new Image();
         img.src = `/images/${imageSrc}`;
@@ -60,7 +113,6 @@ onBeforeMount(() => {
     Promise.all(images).then(() => {
      
       const time2 = window.performance.now();
-      console.log('images loaded in', time2 - time, 'ms')
       loading.value = false;
 
     })
