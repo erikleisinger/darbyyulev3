@@ -15,12 +15,12 @@
         class="absolute left-0 right-0 top-[10%] bottom-[10%]"
         :style="{ backgroundImage: `url(${content.bg})` }"
       />
-      <div class="flex flex-wrap justify-center gap-24">
+      <div class="flex flex-wrap justify-center gap-4 md:gap-24">
         <div
           v-for="(img, index) in content.imgs"
           :key="index"
           class="z-10 flex flex-col justify-between"
-          :class="img.fullWidth ? 'w-full' : 'max-w-[300px] w-[40%]'"
+          :class="img.fullWidth ? 'w-full' : 'max-w-[150px] md:max-w-[300px] w-[40%]'"
         >
           <NuxtImg :src="img.src" class="h-fit" v-if="!img.mobileSrc || !isSm" />
           <NuxtImg v-else :src="img.mobileSrc" class="h-fit" />
