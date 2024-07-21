@@ -1,66 +1,102 @@
 <template>
-  <Container v-if="!isSm">
-    <section class="h-full">
-      <img
-        src="/images/contact_bg.png"
-        class="fixed bottom-0 right-0 max-w-[1000px] m-auto desktop_wave"
-      />
-      <div class="flex items-center gap-4 h-fit w-fit pt-[25vh] pl-[20vw]">
-        <img src="/images/contact_splash.png" class="desktop-splash" />
-        <div class="z-[1] text-gold">
-          <h1>Contact</h1>
-          <h3 class="text-h2 uppercase font-bold">darby@theyulebrothers.ca</h3>
-          <h3 class="text-h2 uppercase font-bold">(778) 836-8719</h3>
-          <div class="flex gap-4 mt-6 text-gold">
-            <NavButton
-              icon="i-carbon-document"
-              text="Resume"
-              @click="openResume"
-            />
-            <NavButton
-              icon="i-carbon-logo-linkedin"
-              text="Linkedin"
-              @click="goToLinkedIn"
-            />
-          </div>
+  <Container class="grid grid-cols-1 lg:grid-cols-2">
+    <div class="flex justify-center items-center h-full w-full min-h-[inherit] md:w-fit md:min-w-[500px] md:m-auto ">
+
+      <div class="px-6 w-full">
+        <h1 class="text-mustard mb-2">Contact</h1>
+
+      <form class="flex flex-col gap-y-8 max-w-full"  ref="form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" :value="web3Key">
+        <div class="flex gap-2 ">
+          <ContactInput v-model="name" label="Name" placeholder="Your name" required name="text" />
+          <ContactInput v-model="email" label="Email" placeholder="name@address.com" required name="email"/>
         </div>
-      </div>
-    </section>
-  </Container>
-  <Container v-else class="flex flex-col justify-center gap-16">
-    <div class="z-[1] text-gold px-8">
-      <h1>Contact</h1>
-      <h3 style="font-weight: bold">darby@theyulebrothers.ca</h3>
-      <h3 style="font-weight: bold">(778) 836-8719</h3>
-      <div class="flex gap-4 mt-6">
-        <NavButton icon="i-carbon-document" text="Resume" @click="openResume" />
-        <NavButton
-          icon="i-carbon-logo-linkedin"
-          text="Linkedin"
-          @click="goToLinkedIn"
-        />
-      </div>
+        <ContactInput v-model="subject" label="Subject" placeholder="A subject for your message" required name="subject"/>
+        <ContactInput v-model="message" label="Message" placeholder="Write something here" required name="message" textarea rows="1" style="resize: none"/>
+        <Button class="w-fit m-auto"  :disabled="submitting" type="submit">Send</Button>
+      </form>
     </div>
-    <img src="/images/contact_bg_mobile.png"  />
+    </div>
+    <div class=" hidden md:flex bg-cover  justify-center items-center" style="background-image: url('/images/contact_new_bg.png')">
+      <img src="/images/contact_splash.png" class="desktop-splash max-h-[60vh]"  />
+      </div>
   </Container>
 </template>
-<style lang="scss" scoped>
-@import "@/styles/_functions.scss";
-.desktop_wave {
-  max-width: calcDimension(1900, false, true);
-}
-.desktop-splash {
-  max-height: calcDimension(1000, false, false);
-}
-</style>
-<script setup>
-const { isSm } = useWindowSize();
+<script setup lang="ts">
+import { useEventListener } from '@vueuse/core';
+import {toast} from 'vue3-toastify'
+import 'vue3-toastify/dist/index.css';
+  let name = ref('')
+  let email = ref('')
+  let subject = ref('')
+  let message = ref('')
 
-const openResume = () => {
-  window.open("/resume.pdf", "_blank");
-};
+  let {web3Key} = useRuntimeConfig().public
 
-const goToLinkedIn = () => {
-  window.open("https://www.linkedin.com/in/darbyyule/", "_blank");
-};
+  let form = ref(null)
+
+  let submitting = ref(false)
+
+  function goToast() {
+    toast.loading('wow', {
+      position: toast.POSITION.TOP_CENTER
+    })
+  }
+
+  let {isSm} = useWindowSize();
+
+  useEventListener(form, 'submit', (e) => {
+    e.preventDefault()
+    submitting.value = true;
+    let toastId = toast.loading('Sending email...', {
+      position: toast.POSITION.TOP_CENTER
+    })
+
+    const formData = new FormData(form.value);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(async (response) => {
+            let json = await response.json();
+    
+        
+            toast.update(toastId, {
+              render: json.message,
+              autoClose: true,
+              closeOnClick: true,
+              closeButton: true,
+              type: 'success',
+              isLoading: false,
+            })
+        })
+        .catch(error => {
+            console.log(error);
+            toast.update(toastId, {
+              render: 'Error sending message. Sorry about that!',
+              autoClose: true,
+              closeOnClick: true,
+              closeButton: true,
+              type: 'error',
+              isLoading: false,
+            })
+          
+        })
+        .then(function() {
+            form.value.reset();
+ 
+        })
+        .finally(() => {
+          submitting.value = false;
+        })
+  })
+
+  
 </script>

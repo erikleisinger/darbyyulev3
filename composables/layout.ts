@@ -6,7 +6,10 @@ export const useLayout = () => {
 
       const backgroundColor = computed(() => isMustard.value ? 'bg-mustard' : 'bg-white') 
       const logoOrientation = computed(() => route.path === '/' ? 'left-0' : 'right-0')
-      const logoColor = computed(() => 'mustard');
+      const logoColor = computed(() => {
+        if (isSm.value || route.path !== '/contact') return 'mustard';
+        return 'white'
+      });
       const showNav = computed(() => isSm.value && !["work-id", 'blog'].includes(route.name as string))
       const showLogo = computed(() => {
         if (["work-id", 'blog'].includes(route.name as string))  return false;

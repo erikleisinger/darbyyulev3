@@ -1,9 +1,6 @@
 <template>
     <div class="flex transition-all duration-200 items-center p-8 max-w-fit   relative" :class="{'fullwidth': open }">
-        <transition>
-      <div class="i-carbon-menu "  @click="open = true" v-if="!open"/>
-      <div class="i-carbon-close " v-else @click="open = false"/>
-    </transition>
+     <SidebarToggle v-model="open"/>
     <transition name="slide">
     <div v-if="open" class="flex gap-16  items-center  pl-16 pr-12  ">
         <h4 class="cursor-pointer transform transition-transform hover:scale-110 hover:font-bold" @click="navigate('/')">Home</h4>

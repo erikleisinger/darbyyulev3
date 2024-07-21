@@ -19,6 +19,14 @@
 .v-leave-to {
   opacity: 0;
 }
+.Toastify__toast-container {
+  top: 16px!important;
+left: 0!important;
+right: 0!important;
+margin: auto!important;
+max-width: 90vw!important;
+
+}
 </style>
 <script setup>
 import preload from '@/utils/preload'

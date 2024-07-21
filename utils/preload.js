@@ -9,9 +9,8 @@ const preloadImages = {
     'about_mobile.png',
     ],
     '/contact': [
-    'contact_bg.png',
-    'contact_bg_mobile.png',
     'contact_splash.png',
+    'contact_new_bg.png'
     ],
     '/work': [
     'item_main_arc.png',

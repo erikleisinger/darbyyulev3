@@ -6,7 +6,7 @@
     <Logo
       :color="logoColor"
       v-if="showLogo"
-      class="absolute md:right-0 md:left-auto m-4 md:m-10 z-10 h-[48px]"
+      class="absolute md:right-0 md:left-auto m-4 md:m-10 z-10 h-[48px] max-w-[15vw]"
       :class="logoOrientation"
       :style="{top: `-${y}px`}"
     ></Logo>
@@ -23,7 +23,7 @@
 
     <!-- page content -->
     <main
-      :style="{height: isSm ? `calc(100vh - ${navHeight}px)` : '100vh'}" ref="main"
+      :style="{minHeight: isSm ? `calc(100vh - ${navHeight}px)` : '100vh'}" ref="main"
 
 
     >

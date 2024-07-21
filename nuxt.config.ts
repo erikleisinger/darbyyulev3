@@ -31,7 +31,13 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/google-fonts",
     "@nuxt/image",
+  
   ],
+  runtimeConfig: {
+    public: {
+      web3Key: process.env.NUXT_WEB3_KEY
+    }
+  },
   ssr: false,
   tailwindcss: {
     config: {
@@ -55,9 +61,28 @@ export default defineNuxtConfig({
           // Select the icon collections you want to use
           collections: getIconCollections(["carbon", "ic"]),
         }),
+        function({ addBase, theme }) {
+          function extractColorVars(colorObj, colorGroup = '') {
+            return Object.keys(colorObj).reduce((vars, colorKey) => {
+              const value = colorObj[colorKey];
+    
+              const newVars =
+                typeof value === 'string'
+                  ? { [`--color${colorGroup}-${colorKey}`]: value }
+                  : extractColorVars(value, `-${colorKey}`);
+    
+              return { ...vars, ...newVars };
+            }, {});
+          }
+    
+          addBase({
+            ':root': extractColorVars(theme('colors')),
+          });
+        },
       ],
     }
   },
+
   typescript: {
     typeCheck: false,
   },

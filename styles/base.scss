@@ -9,8 +9,8 @@ html {
   }
 
   h1 {
-    font-size: calcDimension(72, false, true);
-    line-height:calcDimension(95, false, true);
+    font-size: clamp(24px, calcDimension(72, false, true), 36px);
+    line-height: clamp(28px, calcDimension(95, false, true), 38px);
     text-transform: uppercase;
     font-weight: bold;
     font-family: "azo-sans-web", sans-serif;
@@ -18,9 +18,9 @@ html {
   }
 
   @mixin text-h2 {
-    font-size: calcDimension(45, false, true);
+    font-size: clamp(18px, calcDimension(45, false, true), 22px);
 
-    line-height:calcDimension(49, false, true);
+    line-height:clamp(24px, calcDimension(49, false, true), 30px);
   }
   
   h2 {
@@ -35,8 +35,8 @@ html {
   }
 
   h3 {
-    font-size: max(18px, calcDimension(53, false, true));
-    line-height: max(25px, calcDimension(71, false, true));
+    font-size: clamp(18px, calcDimension(53, false, true), 20px);
+    line-height: clamp(25px, calcDimension(71, false, true), 28px);
   }
 
   h4 {
@@ -62,9 +62,9 @@ html {
       line-height: min(35px, calcDimension(39, true, true));
     }
     h2 {
-      font-size: min(14px, calcDimension(18.75, true, true));
-      line-height:  min(25px, calcDimension(25, true, true));
-      text-transform: unset;
+      font-size: min(11px, calcDimension(18.75, true, true));
+      line-height:  min(15px, calcDimension(25, true, true));
+      text-transform: uppercase;
     }
     h3 {
       font-size: calcDimension(17, true, true);
