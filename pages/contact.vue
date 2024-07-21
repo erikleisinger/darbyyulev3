@@ -66,14 +66,15 @@ import 'vue3-toastify/dist/index.css';
         })
         .then(async (response) => {
             let json = await response.json();
-    
+  
+            const {success} = json;
         
             toast.update(toastId, {
               render: json.message,
               autoClose: true,
               closeOnClick: true,
               closeButton: true,
-              type: 'success',
+              type: success ? 'success' : 'error',
               isLoading: false,
             })
         })
