@@ -1,8 +1,11 @@
 <template>
      <div class="grow group">
-        <label for="name" class="block  font-semibold  text-[#cecccd] group-focus-within:text-mustard transition-all" :class="isSm ? 'text-p-sm' : 'text-h2'">{{ label }}</label>
+        <label for="name" class="block  font-semibold  text-[#cecccd] group-focus-within:text-black transition-all" :class="isSm ? 'text-p-sm' : 'text-h2'">{{ label }}</label>
         <div class="contact-input__container flex">
-            <textarea v-if="textarea" id="name" class="contact-input grow max-w-[80vw] md:max-w-[40vw]  " size="1"  v-model="value" v-bind="$attrs" style="field-sizing: content"/>
+          <div class="relative max-w-[calc(100vw - 3rem)] md:max-w-[40vw] grow textarea__container" v-if="textarea">
+            <div class="invisible  whitespace-pre">{{ value }}</div>
+            <textarea  id="name" class="contact-input w-full pretty-scrollbar "   v-model="value" v-bind="$attrs" style="resize: none"  />
+          </div>
         <input id="name" class="contact-input grow  " size="1"  v-model="value" v-bind="$attrs" v-else/>
       </div>
       </div>
@@ -17,13 +20,13 @@ flex-grow: 1;
     bottom: 0;
     width: 0%;
     height: 1px;
-    background-color: var(--color-mustard);
+    background-color: var(--color-black);
     display: block;
     transition: all 0.3s;
   }
   &:focus-within {
     .contact-input {
-        color: var(--color-mustard);
+        color: var(--color-black);
     }
     &:after {
       width: 100%;
@@ -33,6 +36,13 @@ flex-grow: 1;
     outline: 0;
   
 }
+}
+
+.textarea__container {
+  display: grid;
+  div, textarea {
+    grid-area: 1 / 1 / 2 /2;
+  }
 }
 
 </style>

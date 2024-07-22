@@ -1,7 +1,7 @@
 <template>
-  <Container v-if="!isSm" class="grid grid-rows-2 gap-24">
-    <div class="flex items-end pl-[10vw] pt-[15vh]">
-      <header
+  <Container v-if="!isSm" class="flex flex-col justify-center gap-24 px-[10vw] pb-[5vh] pt-[15vh]">
+    <div class="flex items-end  ">
+      <section
         class="max-w-[50vw] h-fit inset-0"
         :style="{ left: '33vw', right: '20vw' }"
       >
@@ -14,34 +14,49 @@
           solutions, making it easy for organizations to access flexible,
           high-quality design services on a project basis.
         </h3>
-      </header>
+      </section>
     </div>
-    <div class="flex items-start justify-end pr-[10vw] pb-[5vh]">
-      <header
+ 
+    <div class="flex items-start justify-end  ">
+      <section
         class="max-w-[50vw] h-fit inset-0"
         :style="{ left: '33vw', right: '20vw' }"
       >
-        <h1 class="mb-[2vw]">What sets me apart?</h1>
+        <h1 class="mb-[1vw]">What sets me apart?</h1>
         <div class="grid grid-rows-2 grid-cols-2 gap-y-[2vw]">
           <div class="flex gap-4 items-center">
-            <div class="i-carbon-user-favorite text-[3rem]" />
+            <div>
+            <i class="i-carbon-user-favorite text-[3rem]" />
+          </div>
             <h2 class="font-semibold">Authentic & Genuine Design</h2>
           </div>
           <div class="flex gap-4 items-center">
-            <div class="i-carbon-friendship text-[3rem]" />
+            <div>
+            <i class="i-carbon-friendship text-[3rem]" />
+          </div>
             <h2 class="font-semibold">Genuine connection with customers</h2>
           </div>
           <div class="flex gap-4 items-center">
-            <div class="i-carbon-collaborate text-[3rem]" />
+            <div>
+            <i class="i-carbon-collaborate text-[3rem]" />
+          </div>
             <h2 class="font-semibold">Collaborating with consumers</h2>
           </div>
           <div class="flex gap-4 items-center">
-            <div class="i-carbon-chart-relationship text-[3rem]" />
+            <div>
+            <i class="i-carbon-chart-relationship text-[3rem]" />
+          </div>
             <h2 class="font-semibold">Data centered decision making</h2>
           </div>
         </div>
-      </header>
+      </section>
+    
     </div>
+  
+
+  <footer class="self-end">
+        <Button @click="navigateTo('/contact')">Let's connect</Button>
+      </footer>
 
     <img
       src="/images/about_desktop.png"
@@ -91,6 +106,9 @@
           </div>
         </div>
   </section>
+  <footer class="w-full flex justify-center ">
+    <Button @click="navigateTo('/contact')">Let's connect</Button>
+  </footer>
   </div>
  
    

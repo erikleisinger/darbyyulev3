@@ -98,14 +98,15 @@ html {
     }
     &::-webkit-scrollbar-track {
       border-radius: 50px;
+      background-color:  rgb(243, 243, 243);;
     }
     &::-webkit-scrollbar-thumb {
       border-radius: 50px;
       background-clip: content-box;
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgb(213, 213, 213);
       border: 2px solid transparent;
       &:hover {
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color:  rgb(192, 192, 192);;
       }
     }
   

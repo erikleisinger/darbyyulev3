@@ -1,13 +1,10 @@
 <template>
+  <NuxtLayout>
 
-  <NuxtLayout >
-    <transition>
-    <AppLoading v-if="loading"/>
-
-  <NuxtPage v-else />
-
-</transition>
-</NuxtLayout>
+      <AppLoading />
+      <NuxtPage  />
+   
+  </NuxtLayout>
 </template>
 <style lang="scss">
 .v-enter-active,
@@ -20,37 +17,29 @@
   opacity: 0;
 }
 .Toastify__toast-container {
-  top: 16px!important;
-left: 0!important;
-right: 0!important;
-margin: auto!important;
-max-width: 90vw!important;
-
+  top: 16px !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin: auto !important;
+  max-width: 90vw !important;
 }
 </style>
 <script setup>
-import preload from '@/utils/preload'
+import preload from "@/utils/preload";
 const setBg = () => {
-  document.documentElement.style.setProperty('--bg', '#fefefe');
-}
+  document.documentElement.style.setProperty("--bg", "#fefefe");
+};
 
-const {loading, setLoading} = useLoading();
-
-
-
-
+const { loading, setLoading } = useLoading();
 
 const route = useRoute();
 onBeforeMount(() => {
   setBg();
-  setLoading(true)
+  setLoading(true);
   preload(route.path, () => {
     setTimeout(() => {
-      setLoading(false)
-    }, 500)
- 
-  })
-})
-
-
+      setLoading(false);
+    }, 500);
+  });
+});
 </script>
