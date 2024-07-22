@@ -3,7 +3,7 @@
         <label for="name" class="block  font-semibold  text-[#cecccd] group-focus-within:text-black transition-all" :class="isSm ? 'text-p-sm' : 'text-h2'">{{ label }}</label>
         <div class="contact-input__container flex">
           <div class="relative max-w-[calc(100vw - 3rem)] md:max-w-[40vw] grow textarea__container" v-if="textarea">
-            <div class="invisible  w-[calc(100vw - 3rem)] md:w-[40vw]  max-w-[inherit]">{{ value }}</div>
+            <div class="invisible  w-[calc(100vw - 3rem)] md:w-[40vw]  max-w-[inherit] max-h-[min(15vh,_400px)]">{{ value }}</div>
             <textarea  id="name" class="contact-input w-full pretty-scrollbar "   v-model="value" v-bind="$attrs" style="resize: none"  />
           </div>
         <input id="name" class="contact-input grow  " size="1"  v-model="value" v-bind="$attrs" v-else/>

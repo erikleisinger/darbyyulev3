@@ -94,6 +94,7 @@ html {
     -ms-scroll-chaining: none;
     overscroll-behavior: none;
     &::-webkit-scrollbar {
+      height: 12px;
       width: 12px;
     }
     &::-webkit-scrollbar-track {
