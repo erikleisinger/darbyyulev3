@@ -49,6 +49,7 @@ export default defineNuxtConfig({
       theme: {
         colors: {
           mustard: '#C99608',
+          canary: '#f5b900',
           black: '#2E2A21',
           white: '#fefefe',
           gold: '#7D5D05',
